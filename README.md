@@ -1,2 +1,2 @@
 # 202_Liapina
-https://t.me/wowwwoww
+tg: https://t.me/wowwwoww
