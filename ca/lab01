@@ -1,0 +1,12 @@
+ekaterinalapina@MacBook-Ekaterina ~ % cd tests
+ekaterinalapina@MacBook-Ekaterina tests % python3 matrix.py
+854.131905
+ekaterinalapina@MacBook-Ekaterina tests % gcc matrix.c -o matrix
+ekaterinalapina@MacBook-Ekaterina tests % ./matrix
+28.620771
+ekaterinalapina@MacBook-Ekaterina tests % gcc matrix_ikj.c -o matrix_ikj
+ekaterinalapina@MacBook-Ekaterina tests % ./matrix_ikj 
+5.250135
+ekaterinalapina@MacBook-Ekaterina tests % gcc matrix_jki.c -o matrix_jki
+ekaterinalapina@MacBook-Ekaterina tests % ./matrix_jki 
+39.188740
