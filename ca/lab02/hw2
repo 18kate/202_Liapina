@@ -1,1 +1,70 @@
+TASK 1 Convert the following decimal numbers to 6-bit binary numbers 
+(describe how you have done this).
+Unsigned: 0, 13, 24, 63.
+Signed: 16, -2, 31, -32.
+
+Solution:
+*Unsingned values just by using the division by 2 and merging from 
+the end for.
+0 => 000000 (obviously)
+13 => 001101 (13//2 = 6 (1) 6//2 = 3 (0) 3//2  = 1 (1) =>> 1101, other zeros for 6 bits)
+24 => 011000 (24//2 = 12 (0) 12//2 = 6 (0) 6//2 = 3  (0) 3//2 = 1 (1) =>> 11000, ther zeros for 6 bits)
+63 => 111111 (63//2 = 31 (1) 31//2 = 15 (1) 15//2 = 7 (1) 7//2 = 3 (1) 3//2 = 1 (1) =>> 111111, already 6 bits)
+
+*Signed values we need do remember that the leftest is used to signify that the
+value is negative (0 -for positive value, 1 -for negative value)
+16 => 010000 (as previous +0 at the beginning for the sign)
+-2 =>  111110 (First, let’s remember that there in 1 at the beginning denoting the sign. Then let’s convert as the unsigned =>> 000010. Find complement =>> 111101. Add 1 =>> 111110)
+31 =>  011111 (same as previous)
+-32 => 100000 (convert =>> 100000. Complement =>> 011111. Add 1 =>> 100000)
+
+
+
+TASK 2 Convert the following 6-bit values to decimal numbers. Consider both unsigned 
+and two’s complement formats (provide a formula).
+Values: 000101, 101011, 111111, 100000
+
+Solution:
+By formula: a×2^0 + b×2^1 + c×2^2 + ... (where a,b,c are decimal's value digits)
+Unsingned:
+000101=> 0*2^5 + 0*2^4 + 0*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 4 + 1 = 5
+101011=> 1*2^5 + 0*2^4 + 1*2^3 + 0*2^2 + 1*2^1 + 1*2^0 = 32 + 8 + 2 + 1 = 43 
+111111=> 1*2^5 + 1*2^4 + 1*2^3 + 1*2^2 + 1*2^1 + 1*2^0 = 32 + 16 + 8 + 4 + 2 + 1 = 63
+100000=> 1*2^5 + 0*2^4 + 0*2^3 + 0*2^2 + 0*2^1 + 0*2^0 = 32
+
+Signed: 
+000101=> 1*2^2 + 0*2^1 + 1*2^0  =>> +5
+101011 => -1 => 101010 => Find complement => 010101 => convert (1*2^4 + 0*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 21) =>> -21
+111111 => -1 => 111110 => Find complement => 000001 => convert (1*2^0 = 1) =>> -1
+100000 => -1 => 011111 => Find complement => 100000 => convert (1*2^5 + 0*2^4 + 0*2^3 + 0*2^2 + 0*2^1 + 0*2^0 = 32) =>> -32
+
+
+
+TASK 3 Convert the following decimal values to 8-bit hexadecimal numbers.
+Values: 7, 240, 171, 126
+Solution:
+By //16
+7 => 7
+240 => 240//16 = 15 (0), 15 ==  F =>> F0
+171 -> 171//16 = 10 (11==B), 10 == A =>> AB
+126 -> 126//16 = 7 (14 == E), 7 =>> 7E
+
+
+
+TASK 4 Convert the following hexadecimal numbers to 8-bit binary values:
+Values: 0x3C, 0x7E, 0xFF, 0xA5
+Solution:
+0x3C => 3*16^1 + 12*16^0 = 60 => convert 60//2 = 30(0) 30//2 = 15(0) 15//2 = 7(1) 7//2 = 3(1) 3//2 = 1(1)=> 111100=> 00111100
+0x7E => 7*16^1 +14*16^0 = 126 => 01111110
+0xFF => 15*16^1 + 15*16^0 = 255 => 11111111
+0xA5 => 10*16^1 + 5*16^0 = 165 => 10100101
+
+
+
+5) Negate the binary values (integer negation) from the previous task.
+Solution:
+00111100 => complement 11000011 => +1 => 11000100
+01111110 => complement 10000001 => +1 => 10000010
+11111111 => complement 00000000 => +1 => 00000001
+10100101 => complement  01011010 => +1 => 01011011
 
